@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Carles Altadill i Serres (el Pinell de Brai, 1940), pintor. Biografia, aquarel·les, olis, plumilla i exposicions.">
+<meta property="og:title" content="Carles Altadill i Serres">
+<meta property="og:image" content="https://carlesaltadill.com/img/oli-2.jpg">
+<title>Carles Altadill i Serres</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Figtree:wght@400;500&display=swap">
+<style>
+body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+/* Concepte: una sala d'exposició fosca; cada obra penjada a la paret amb el seu focus de llum i la seva cartel·la. */
+:root{
+  --wall:#151311;        /* paret de la sala */
+  --wall-2:#1d1a17;      /* paret secundària */
+  --text:#ece6dc;        /* text principal */
+  --muted:#a39a8d;       /* cartel·les i text secundari */
+  --light:#e9c98f;       /* llum càlida del focus */
+  --line:#2e2a25;        /* filets */
+  --display:"Gloock", Georgia, "Times New Roman", serif;
+  --body:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--wall);color:var(--text);font:400 1.0625rem/1.7 var(--body)}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--light)}
+:focus-visible{outline:2px solid var(--light);outline-offset:3px}
+
+/* barra superior */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--wall)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--wall) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:56px}
+.brand{font-family:var(--display);font-size:1.15rem;color:var(--text);text-decoration:none;white-space:nowrap}
+nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0}
+nav ul a{color:var(--muted);text-decoration:none;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
+nav ul a:hover{color:var(--text)}
+@media (max-width:520px){nav ul{gap:14px}nav ul a{font-size:.7rem;letter-spacing:.1em}.brand{font-size:1rem}}
+
+/* portada */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero img{width:100%;height:clamp(340px,70vh,640px);object-fit:cover;filter:brightness(.62) saturate(.9)}
+.hero .txt{position:absolute;inset:auto 0 0;padding-block:0 40px;background:linear-gradient(180deg,transparent,rgba(10,9,8,.85))}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(2.6rem,8vw,5.2rem);line-height:1;margin:0;text-wrap:balance}
+.hero .sub{margin:14px 0 0;color:var(--light);font-size:.8rem;letter-spacing:.22em;text-transform:uppercase}
+
+section{padding-block:80px}
+.eyebrow{color:var(--light);font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;margin:0 0 10px}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(1.9rem,5vw,2.8rem);line-height:1.1;margin:0 0 28px;text-wrap:balance}
+
+/* biografia */
+.bio{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:56px;align-items:start}
+.bio .text{min-width:0;max-width:65ch}
+.bio .text p{margin:0 0 1.1em;color:#d9d2c6}
+@media (max-width:820px){.bio{grid-template-columns:minmax(0,1fr);gap:36px}}
+
+/* obra a la paret: focus + marc + cartel·la */
+.obra{margin:0;display:flex;flex-direction:column;align-items:center;gap:18px;padding-block:36px 8px;position:relative;cursor:zoom-in;background:none;border:0;color:inherit;font:inherit;width:100%}
+.obra::before{content:"";position:absolute;top:0;left:50%;width:120%;height:85%;transform:translateX(-50%);background:radial-gradient(ellipse 50% 60% at 50% 0%,color-mix(in srgb,var(--light) 16%,transparent),transparent 70%);pointer-events:none}
+.obra img{position:relative;max-width:100%;height:auto;border:10px solid #0c0b0a;box-shadow:0 0 0 1px #3a342d,0 22px 40px -12px rgba(0,0,0,.8);transition:transform .4s}
+.obra img.petita{width:min(100%,280px)}
+.obra:hover img{transform:translateY(-3px)}
+.cartela{position:relative;text-align:left;font-size:.78rem;line-height:1.45;color:var(--muted);background:var(--wall-2);border:1px solid var(--line);padding:8px 12px;min-width:150px}
+.cartela b{display:block;color:var(--text);font-weight:500;font-size:.85rem}
+
+/* galeria */
+#galeria{background:var(--wall-2);border-block:1px solid var(--line)}
+#galeria .obra::before{background:radial-gradient(ellipse 50% 60% at 50% 0%,color-mix(in srgb,var(--light) 13%,transparent),transparent 70%)}
+#galeria .cartela{background:var(--wall)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:-8px 0 40px}
+.filters button{font:500 .78rem var(--body);letter-spacing:.12em;text-transform:uppercase;padding:9px 16px;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:2px;cursor:pointer}
+.filters button[aria-pressed="true"]{border-color:var(--light);color:var(--light)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:40px 36px;align-items:end}
+
+/* exposicions */
+.expo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:56px;align-items:start}
+.expo .any{font-family:var(--display);font-size:clamp(3.5rem,9vw,5.5rem);line-height:1;color:var(--light);margin:0 0 6px}
+.expo p{color:#d9d2c6;max-width:60ch}
+.llocs{list-style:none;padding:0;margin:20px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 20px;color:var(--muted);font-size:.92rem}
+.llocs li{border-top:1px solid var(--line);padding-top:6px}
+.fotos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.fotos button{padding:0;border:0;background:none;cursor:zoom-in}
+.fotos img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;filter:grayscale(.25) brightness(.9);transition:filter .3s}
+.fotos button:hover img{filter:none}
+.nota{font-size:.78rem;color:var(--muted);margin-top:10px}
+@media (max-width:820px){.expo{grid-template-columns:minmax(0,1fr);gap:36px}}
+
+footer{border-top:1px solid var(--line);padding-block:48px;text-align:center;color:var(--muted);font-size:.85rem}
+footer .nom{font-family:var(--display);font-size:1.5rem;color:var(--text);margin-bottom:4px}
+
+/* visor ampliat */
+.lb{position:fixed;inset:0;z-index:50;background:rgba(8,7,6,.96);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:calc(env(safe-area-inset-top,0px) + 56px) max(16px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 56px) max(16px,env(safe-area-inset-left,0px))}
+.lb img{max-width:100%;max-height:78vh;object-fit:contain;box-shadow:0 30px 60px rgba(0,0,0,.7)}
+.lb .cap{color:var(--muted);font-size:.85rem;text-align:center}
+.lb button{position:absolute;background:none;border:0;color:var(--text);font:400 2.2rem/1 var(--body);padding:12px 14px;cursor:pointer;opacity:.75}
+.lb button:hover{opacity:1}
+.lb .x{top:calc(env(safe-area-inset-top,0px) + 6px);right:max(8px,env(safe-area-inset-right,0px))}
+.lb .prev{left:max(4px,env(safe-area-inset-left,0px));top:50%;transform:translateY(-50%)}
+.lb .next{right:max(4px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#inici">Carles Altadill</a>
+    <ul>
+      <li><a href="#biografia">Biografia</a></li>
+      <li><a href="#galeria">Obra</a></li>
+      <li><a href="#exposicions">Exposicions</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="inici">
+  <img src="img/oli-2.jpg" alt="">
+  <div class="txt">
+    <div class="wrap">
+      <h1>Carles Altadill i&nbsp;Serres</h1>
+      <p class="sub">Pintor · El Pinell de Brai, 1940</p>
+    </div>
+  </div>
+</header>
+
+<section id="biografia">
+  <div class="wrap bio">
+    <button class="obra" type="button" data-cap="Mas entre ametllers · Aquarel·la">
+      <img src="img/aquarela-3.jpg" alt="Aquarel·la: un mas entre ametllers sota un cel de tempesta">
+      <span class="cartela"><b>Mas entre ametllers</b>Aquarel·la</span>
+    </button>
+    <div class="text">
+      <p class="eyebrow">Biografia</p>
+      <h2>La llum seca de la Terra Alta</h2>
+      <p>En Carles Altadill i Serres va néixer al Pinell de Brai (Terra Alta) el 1940. De ben petit s'hi despertà la vocació artística. El paisatge sec, dur i lluminós de la seva terra, fet a cops de treball, suor i sacrifici, hi va influir decisivament. Dibuixava allò que més li agradava del seu entorn, i a l'escola el llapis, el paper, els colors i la tinta xinesa eren els seus millors amics.</p>
+      <p>Durant els estudis de Magisteri, a Tarragona, va descobrir definitivament la vocació que sempre havia portat a dins. Per això va estudiar a l'Escola d'Art de la Diputació de Tarragona, on es formà en totes les vessants de l'art. Allà va assistir a les classes d'escultura de l'admirat mestre Salvador Martorell, i després continuà la pràctica artística a l'estudi de l'escultor tarragoní Eustaqui Vallès. Va fer classes de dibuix, pintura i escultura al Taller de l'Artista, de Tarragona.</p>
+      <p>La seva vocació irrenunciable, el seu temperament i la força vital i cromàtica que respiren les seves obres el van fer un pintor reconegut i estimat a la nostra terra. Va fer més de cinquanta exposicions a les nostres comarques i arreu de Catalunya, sovint en pobles petits amb vocació artística i en viles i ciutats amb tradició cultural. L'obra que hi presentava naixia sempre del mateix lloc on exposava.</p>
+    </div>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="wrap">
+    <p class="eyebrow">Obra</p>
+    <h2>Galeria</h2>
+    <div class="filters" role="group" aria-label="Filtra per tècnica">
+      <button type="button" aria-pressed="true" data-f="tot">Totes</button>
+      <button type="button" aria-pressed="false" data-f="aquarela">Aquarel·la</button>
+      <button type="button" aria-pressed="false" data-f="oli">Oli</button>
+      <button type="button" aria-pressed="false" data-f="plumilla">Plumilla</button>
+    </div>
+    <div class="grid" id="grid">
+      <button class="obra" type="button" data-t="aquarela" data-cap="El celler · Aquarel·la"><img loading="lazy" src="img/aquarela-2.jpg" alt="Celler amb arcs de pedra i bótes"><span class="cartela"><b>El celler</b>Aquarel·la</span></button>
+      <button class="obra" type="button" data-t="oli" data-cap="Bodegó amb raïm · Oli"><img loading="lazy" src="img/oli-2.jpg" alt="Bodegó amb raïm, ampolla i copa"><span class="cartela"><b>Bodegó amb raïm</b>Oli</span></button>
+      <button class="obra" type="button" data-t="plumilla" data-cap="Carrer porxat · Plumilla"><img loading="lazy" src="img/plumilla-1.jpg" alt="Carrer estret amb arcs i porxos, a tinta"><span class="cartela"><b>Carrer porxat</b>Plumilla</span></button>
+      <button class="obra" type="button" data-t="aquarela" data-cap="Mas entre ametllers · Aquarel·la"><img loading="lazy" src="img/aquarela-3.jpg" alt="Mas entre ametllers sota un cel de tempesta"><span class="cartela"><b>Mas entre ametllers</b>Aquarel·la</span></button>
+      <button class="obra" type="button" data-t="aquarela" data-cap="La verema · Aquarel·la"><img loading="lazy" class="petita" src="img/aquarela-1.jpg" alt="Veremadors treballant a la vinya"><span class="cartela"><b>La verema</b>Aquarel·la</span></button>
+      <button class="obra" type="button" data-t="aquarela" data-cap="Sense títol · Aquarel·la"><img loading="lazy" class="petita" src="img/aquarela-4.jpg" alt="Aquarel·la de Carles Altadill"><span class="cartela"><b>Sense títol</b>Aquarel·la</span></button>
+      <button class="obra" type="button" data-t="oli" data-cap="Sense títol · Oli"><img loading="lazy" class="petita" src="img/oli-1.jpg" alt="Oli de Carles Altadill"><span class="cartela"><b>Sense títol</b>Oli</span></button>
+      <button class="obra" type="button" data-t="oli" data-cap="Sense títol · Oli"><img loading="lazy" class="petita" src="img/oli-3.jpg" alt="Oli de Carles Altadill"><span class="cartela"><b>Sense títol</b>Oli</span></button>
+    </div>
+  </div>
+</section>
+
+<section id="exposicions">
+  <div class="wrap expo">
+    <div>
+      <p class="eyebrow">Exposicions</p>
+      <p class="any">1985</p>
+      <h2>Ajuntament de Tarragona</h2>
+      <p>Exposició amb motiu de les Festes de Santa Tecla, inaugurada pel president de la Generalitat de Catalunya, Jordi Pujol i Soley.</p>
+      <p style="margin-top:28px">Altres exposicions destacades:</p>
+      <ul class="llocs">
+        <li>Museu de Vilafranca del Penedès</li>
+        <li>Centre de Comerç de Tortosa</li>
+        <li>Museu d'Alcover</li>
+        <li>Torre Vella de Salou</li>
+        <li>Lleida</li>
+        <li>Els Pallaresos</li>
+        <li>Paüls</li>
+        <li>Prades</li>
+      </ul>
+    </div>
+    <div>
+      <div class="fotos" id="fotos">
+        <button type="button" data-cap="Ajuntament de Tarragona, 1985"><img loading="lazy" src="img/expo-tarragona-1985-1.jpg" alt="Visitants a l'exposició de l'Ajuntament de Tarragona, 1985"></button>
+        <button type="button" data-cap="Ajuntament de Tarragona, 1985"><img loading="lazy" src="img/expo-tarragona-1985-2.jpg" alt="Exposició a l'Ajuntament de Tarragona, 1985"></button>
+        <button type="button" data-cap="Ajuntament de Tarragona, 1985"><img loading="lazy" src="img/expo-tarragona-1985-3.jpg" alt="Exposició a l'Ajuntament de Tarragona, 1985"></button>
+        <button type="button" data-cap="Ajuntament de Tarragona, 1985"><img loading="lazy" src="img/expo-tarragona-1985-4.jpg" alt="Exposició a l'Ajuntament de Tarragona, 1985"></button>
+        <button type="button" data-cap="Ajuntament de Tarragona, 1985"><img loading="lazy" src="img/expo-tarragona-1985-5.jpg" alt="Exposició a l'Ajuntament de Tarragona, 1985"></button>
+        <button type="button" data-cap="Ajuntament de Tarragona, 1985"><img loading="lazy" src="img/expo-tarragona-1985-6.jpg" alt="Exposició a l'Ajuntament de Tarragona, 1985"></button>
+      </div>
+      <p class="nota">Fotos de la inauguració, Santa Tecla 1985.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="nom">Carles Altadill i Serres</div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Obra ampliada" hidden>
+  <button class="x" type="button" aria-label="Tanca">&times;</button>
+  <button class="prev" type="button" aria-label="Anterior">&#8249;</button>
+  <img alt="">
+  <div class="cap"></div>
+  <button class="next" type="button" aria-label="Següent">&#8250;</button>
+</div>
+
+<script>
+const filtres = document.querySelectorAll('.filters button');
+filtres.forEach(b => b.addEventListener('click', () => {
+  filtres.forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+  document.querySelectorAll('#grid .obra').forEach(o => { o.hidden = !(b.dataset.f === 'tot' || o.dataset.t === b.dataset.f); });
+}));
+
+const lb = document.getElementById('lb'), lbImg = lb.querySelector('img'), lbCap = lb.querySelector('.cap');
+let llista = [], idx = 0;
+function mostra(){ const el = llista[idx], im = el.querySelector('img'); lbImg.src = im.src; lbImg.alt = im.alt; lbCap.textContent = el.dataset.cap || im.alt; }
+function obre(items, el){ llista = items; idx = Math.max(0, items.indexOf(el)); mostra(); lb.hidden = false; lb.querySelector('.x').focus(); }
+function tanca(){ lb.hidden = true; }
+document.addEventListener('click', e => {
+  const o = e.target.closest('.obra');
+  if (o && !o.closest('#lb')) {
+    const items = o.closest('#grid') ? [...document.querySelectorAll('#grid .obra:not([hidden])')] : [o];
+    obre(items, o); return;
+  }
+  const f = e.target.closest('#fotos button');
+  if (f) obre([...document.querySelectorAll('#fotos button')], f);
+});
+function mou(d){ idx = (idx + d + llista.length) % llista.length; mostra(); }
+lb.querySelector('.x').addEventListener('click', tanca);
+lb.querySelector('.prev').addEventListener('click', () => mou(-1));
+lb.querySelector('.next').addEventListener('click', () => mou(1));
+lb.addEventListener('click', e => { if (e.target === lb) tanca(); });
+document.addEventListener('keydown', e => {
+  if (lb.hidden) return;
+  if (e.key === 'Escape') tanca();
+  if (e.key === 'ArrowLeft') mou(-1);
+  if (e.key === 'ArrowRight') mou(1);
+});
+let x0 = null;
+lb.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, {passive:true});
+lb.addEventListener('touchend', e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 50) mou(dx < 0 ? 1 : -1); x0 = null; });
+</script>
+</body>
+</html>
